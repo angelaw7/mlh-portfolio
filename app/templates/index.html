@@ -16,6 +16,7 @@
 
     <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <script src="https://kit.fontawesome.com/792cf20241.js" crossorigin="anonymous"></script>
     <title>{{ title }}</title>
 </head>
 
@@ -36,5 +37,35 @@
         </div>
         <h1>{{ title }}</h1>
     </div>
+
+    <!-- Projects -->
+    <section class="projects">
+
+        <h2 class="section-title">
+            <i class="fas fa-project-diagram"></i>
+            Projects
+        </h2>
+
+        <div class="project-card-holder">
+            {% for project in projects %}
+            <div class="project-card card">
+                <img class="project-card-img" src="{{project.img}}" alt="{{project.name}}">
+                <div>
+                    <p class="project-card-title">{{project.title}}</p>
+                    <p class="project-card-text">{{project.description}}</p>
+                    <p class="project-card-date">{{project.date}}</p>
+                    <div class="center">
+                        <button onclick=" window.open('http://{{project.url}}','_blank')" class="project-card-button center">
+                            <i class="fab fa-github"></i>
+                            View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </section>
 </body>
 </html>
