@@ -51,9 +51,7 @@ body {
 
 .profile {
     text-align: center;
-    height: 60%;
     margin-bottom: -5px;
-    position: relative;
 }
 .profile > img {
     width: 100%;
@@ -92,8 +90,10 @@ body {
 
 .navbar {
     background-color: #1d539f;
-    height: 70px;
+    /* height: 70px; */
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbarItems {
@@ -101,6 +101,18 @@ body {
     justify-content: space-around;
     width: 100%;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.navbarItems > li {
+    text-align: center;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+    padding: 1.5rem 0;
+}
+.navbarItems > li:hover {
+    background-color: hsl(215, 69%, 27%);
 }
 
 
@@ -219,4 +231,10 @@ body {
 }
 .project-card-button:hover > i {
     transform: rotate(-25deg) translateX(-15px) translateY(-20px) scale(1.2);
+}
+.project-card-button > label {
+    transition: transform 0.3s ease-in-out;
+}
+.project-card-button:hover > label {
+    transform: translateX(-15px);
 }
