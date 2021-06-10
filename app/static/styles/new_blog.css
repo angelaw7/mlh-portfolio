@@ -1,0 +1,95 @@
+p, h1, h2, h3, h4, h5, h6, button {
+    font-family: "Roboto", serif;
+}
+
+body {
+    background-color: #f5f5f9;
+    background-size: cover;
+    width: auto; 
+    overflow-x: hidden;
+    font-family: "Roboto", serif;
+    margin: 0px;
+    padding: 1rem;
+}
+
+/* GENERAL */
+.button {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.8rem;
+    text-transform: uppercase;
+    box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.02),
+        0 0.8px 5.3px rgba(0, 0, 0, 0.028),
+        0 1.5px 10px rgba(0, 0, 0, 0.035),
+        0 2.7px 17.9px rgba(0, 0, 0, 0.042),
+        0 5px 33.4px rgba(0, 0, 0, 0.05),
+        0 12px 80px rgba(0, 0, 0, 0.07);
+}
+.button:active {
+    filter: brightness(0.9);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.02),
+        0 0.8px 5.3px rgba(0, 0, 0, 0.028),
+        0 1.5px 10px rgba(0, 0, 0, 0.035),
+        0 2.7px 17.9px rgba(0, 0, 0, 0.042),
+        0 5px 33.4px rgba(0, 0, 0, 0.05),
+        0 12px 80px rgba(0, 0, 0, 0.07);
+}
+
+/* CONTENT */
+.cancel {
+    display: flex;
+    justify-content: flex-end;
+}
+.cancel > i {
+    font-size: 2rem;
+    color: red;
+    cursor: pointer;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    max-width: 20rem;
+}
+.input-container > label {
+    margin-bottom: 1rem;
+}
+.input-container > input, textarea {
+    padding: 1rem;
+    background-color: hsl(0, 0%, 90%);
+    border: none;
+    border-radius: 1rem;
+}
+.textarea {
+    max-width: 40rem;
+}
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
