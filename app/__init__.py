@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from db import db_init, db
 from models import Blog
-from contactForm import ContactForm
+# from contactForm import ContactForm
 
 
 
