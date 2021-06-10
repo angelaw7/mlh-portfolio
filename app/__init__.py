@@ -44,8 +44,7 @@ projects = [
 # Pages
 @app.route('/')
 def index():
-    blog_posts = get_posts()
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, projects=projects, blog_posts=blog_posts)
+    return render_template('about.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo)
 
 
 @app.route('/portfolio')
@@ -60,9 +59,13 @@ def blogPage():
         post.img = send_file(post.img, post.img_mimetype)
     return render_template('blog.html', url=os.getenv("URL"), headerInfo=headerInfo, blog_posts=blog_posts)
 
-
-@app.route('/contact', methods=['POST'])
+@app.route('/contact')
 def contact():
+    return render_template('contact.html', url=os.getenv("URL"), headerInfo=headerInfo)
+
+
+@app.route('/sendMsg', methods=['POST'])
+def sendMsg():
     name = request.form['name']
     email = request.form['email']
     message = request.form['message']
