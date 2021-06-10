@@ -17,7 +17,7 @@
     <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <script src="https://kit.fontawesome.com/792cf20241.js" crossorigin="anonymous"></script>
-    <title>{{ title }}</title>
+    <title>{{ headerInfo.name }}</title>
 </head>
 
 <body>
@@ -31,13 +31,22 @@
         </div>
     </header>
 
+    <!-- Header -->
     <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
-        </div>
-        <h1>{{ title }}</h1>
+        <img src={{headerInfo.img}} alt="cover"/>
+        <h1>{{headerInfo.name}}</h1>
+        <h3>{{headerInfo.intro}}</h3>
     </div>
 
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul class="navbarItems">
+            <li>About Me</li>
+            <li>Portfolio</li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+    </div>
     <!-- Projects -->
     <section class="projects">
 
