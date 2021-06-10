@@ -41,70 +41,15 @@
     <!-- Navbar -->
     <div class="navbar">
         <ul class="navbarItems">
-            <li>About Me</li>
-            <li>Portfolio</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <a href="/"><li>About Me</li></a>
+            <a href="portfolio"><li>Portfolio</li></a>
+            <a href="blog"><li>Blog</li></a>
+            <a href="contact"><li>Contact</li></a>
+            
         </ul>
     </div>
-    <!-- Projects -->
-    <section class="projects">
 
-        <h2 class="section-title">
-            <i class="fas fa-project-diagram"></i>
-            Projects
-        </h2>
-
-        <div class="project-card-holder">
-            {% for project in projects %}
-            <div class="project-card card">
-                <img class="project-card-img" src="{{project.img}}" alt="{{project.name}}">
-                <div>
-                    <p class="project-card-title">{{project.title}}</p>
-                    <p class="project-card-text">{{project.description}}</p>
-                    <p class="project-card-date">{{project.date}}</p>
-                    <div class="center">
-                        <button onclick=" window.open('http://{{project.url}}','_blank')" class="button project-card-button center">
-                            <i class="fab fa-github"></i>
-                            <label>View Project</label>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-
-    </section>
-
-    <section class="projects">
-        <h2 class="section-title">
-            <i class="fas fa-project-diagram"></i>
-            Blog
-        </h2>
-        <div class="project-card-holder">
-            {% for post in blog_posts %}
-            <div class="project-card card">
-                <img class="project-card-img" src="{{'./static/img/placeholder.jpg' or post.img}}" alt="{{post.img_name}}">
-                <div>
-                    <p class="project-card-title">{{post.title}}</p>
-                    <p class="project-card-text">{{post.content}}</p>
-                    <p class="project-card-date">{{post.date_created}}</p>
-                    <div class="center">
-                        <button onclick=" window.open('blog/{{post.id}}')" class="button project-card-button center">
-                            <i class="fas fa-comment-dots"></i>
-                            <label>View Post</label>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section>
-
-    </section>
+    {% block content %}
+    {% endblock content %}
 </body>
 </html>

@@ -4,16 +4,21 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from db import db_init, db
 from models import Blog
+from contactForm import ContactForm
+
 
 
 load_dotenv()
 app = Flask(__name__)
+ 
+app.secret_key = 'development key'
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 db_init(app)
 
 headerInfo = {
     'img':'./static/img/coverimg.jpg',
-    'name': 'Fellow Name _;D',
+    'name': 'Fellow Name',
     'intro': 'Three words here'
 }
 
@@ -34,13 +39,33 @@ projects = [
     },
 ]
 
+
+# Pages
 @app.route('/')
 def index():
+    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, projects=projects)
+
+
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html', headerInfo=headerInfo, projects=projects)
+
+
+@app.route('/blog')
+def blogPage():
     blog_posts = get_posts()
     for post in blog_posts:
         post.img = send_file(post.img, post.img_mimetype)
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, projects=projects, blog_posts=blog_posts)
+    return render_template('blog.html', url=os.getenv("URL"), headerInfo=headerInfo, blog_posts=blog_posts)
 
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    return render_template('contact.html', headerInfo=headerInfo, form=form)
+
+
+# Creating new blog posts
 @app.route('/new-blog')
 def new_blog():
     return render_template('new_blog.html', title="New Blog", url=os.getenv("URL"), projects=projects)
