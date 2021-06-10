@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block content %}
+<section class="projects">
+  <h2 class="section-title">
+      <i class="fas fa-project-diagram"></i>
+      Blog
+  </h2>
+  <div class="project-card-holder">
+      {% for post in blog_posts %}
+      <div class="project-card card">
+          <img class="project-card-img" src="{{'./static/img/placeholder.jpg' or post.img}}" alt="{{post.img_name}}">
+          <div>
+              <p class="project-card-title">{{post.title}}</p>
+              <p class="project-card-text">{{post.content}}</p>
+              <p class="project-card-date">{{post.date_created}}</p>
+              <div class="center">
+                  <button onclick=" window.open('blog/{{post.id}}')" class="button project-card-button center">
+                      <i class="fas fa-comment-dots"></i>
+                      <label>View Post</label>
+                  </button>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</section>
+{% endblock %}

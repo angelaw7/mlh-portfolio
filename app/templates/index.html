@@ -41,15 +41,13 @@
     <!-- Navbar -->
     <div class="navbar">
         <ul class="navbarItems">
-            <li>About Me</li>
-            <li>Portfolio</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <a href="/"><li>About Me</li></a>
+            <a href="portfolio"><li>Portfolio</li></a>
+            <a href="blog"><li>Blog</li></a>
+            <a href="contact"><li>Contact</li></a>
+            
         </ul>
     </div>
-    <!-- Projects -->
-    <section class="projects">
-
         <h2 class="section-title">
             <i class="fas fa-project-diagram"></i>
             Projects
@@ -135,5 +133,8 @@
             </form>
         </div>
     </section>
+
+    {% block content %}
+    {% endblock content %}
 </body>
 </html>
