@@ -5,6 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
+headerInfo = {
+    'img':'./static/img/coverimg.jpg',
+    'name': 'fellow name ;D',
+    'intro': 'three words here'
+}
+
 projects = [
     {
         'title': 'Flask Web App',
@@ -24,4 +30,7 @@ projects = [
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), projects=projects)
+    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, projects=projects)
+
+if __name__ == "__main__":
+    app.run(debug=True)
