@@ -19,11 +19,7 @@ db_init(app)
 headerInfo = {
     'img':'./static/img/coverimg.jpg',
     'name': 'Fellow Name',
-<<<<<<< HEAD
     'intro': 'Short intro here'
-=======
-    'intro': 'Three words here'
->>>>>>> 0033d3c76f6cda2f68f3ed66dbddc9fb01bb9b67
 }
 
 projects = [
