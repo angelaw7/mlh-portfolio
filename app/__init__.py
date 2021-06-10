@@ -13,8 +13,8 @@ db_init(app)
 
 headerInfo = {
     'img':'./static/img/coverimg.jpg',
-    'name': 'Fellow Name _;D',
-    'intro': 'Three words here'
+    'name': 'Fellow Name',
+    'intro': 'Short intro here'
 }
 
 projects = [
