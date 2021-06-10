@@ -103,14 +103,15 @@ body {
     padding: 0;
     margin: 0;
 }
-.navbarItems > a > li {
+.navbarItems > a {
     text-align: center;
+    text-decoration: none;
     width: 100%;
     color: white;
     cursor: pointer;
     padding: 1.5rem 0;
 }
-.navbarItems > li:hover {
+.navbarItems > a:hover {
     background-color: hsl(215, 69%, 27%);
 }
 
@@ -151,6 +152,12 @@ body {
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem;
+    box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.02),
+        0 0.8px 5.3px rgba(0, 0, 0, 0.028),
+        0 1.5px 10px rgba(0, 0, 0, 0.035),
+        0 2.7px 17.9px rgba(0, 0, 0, 0.042),
+        0 5px 33.4px rgba(0, 0, 0, 0.05),
+        0 12px 80px rgba(0, 0, 0, 0.07);
 }
 
 .center {
@@ -244,12 +251,14 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
 }
 .form-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 form {
     display: flex;
@@ -263,6 +272,11 @@ form {
     flex-direction: column;
     margin: 1rem 0;
     width: 30rem
+}
+@media (max-width: 600px) {
+    .input-container {
+        width: 100%
+    }
 }
 .input-container > label {
     margin-bottom: 1rem;
@@ -280,4 +294,13 @@ form {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+.submit {
+    background-color: #e6594f;
+    color: white;
+    padding: 0.8rem;
+}
+.contact-message {
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.2rem;
 }

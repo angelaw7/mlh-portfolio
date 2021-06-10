@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from db import db_init, db
 from models import Blog
+import smtplib
 # from contactForm import ContactForm
 
 
@@ -43,7 +44,8 @@ projects = [
 # Pages
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, projects=projects)
+    blog_posts = get_posts()
+    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, projects=projects, blog_posts=blog_posts)
 
 
 @app.route('/portfolio')
@@ -59,10 +61,20 @@ def blogPage():
     return render_template('blog.html', url=os.getenv("URL"), headerInfo=headerInfo, blog_posts=blog_posts)
 
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact', methods=['POST'])
 def contact():
-    form = ContactForm()
-    return render_template('contact.html', headerInfo=headerInfo, form=form)
+    name = request.form['name']
+    email = request.form['email']
+    message = request.form['message']
+    if not name or not email or not message:
+        return 'Not enough data!', 400
+
+    message2Send = '\nName: ' + name + ' \nEmail: ' + email + '\nMessage: ' + message
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login('testmlh.pod.333@gmail.com', 'iampod333')
+    server.sendmail('testmlh.pod.333@gmail.com', 'testmlh.pod.333@gmail.com', message2Send)
+    return render_template('success.html', url=os.getenv("URL"), headerInfo=headerInfo)
 
 
 # Creating new blog posts
@@ -78,18 +90,18 @@ def upload():
     content = request.form['blog-content']
 
     if not pic or not title or not content:
-        return 'No pic uploaded!', 400
+        return 'Not enough data!', 400
 
     filename = secure_filename(pic.filename)
     mimetype = pic.mimetype
     if not filename or not mimetype:
-        return 'Bad upload!', 400
+        return 'Not enough data!', 400
 
     post = Blog(title=title, content=content, img=pic.read(), img_name=filename, img_mimetype=mimetype)
     db.session.add(post)
     db.session.commit()
 
-    return 'Post Uploaded', 200
+    return render_template('success.html', url=os.getenv("URL"), headerInfo=headerInfo)
 
 
 @app.route('/blog/<int:id>')
