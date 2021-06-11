@@ -305,15 +305,50 @@ form {
     letter-spacing: 0.2rem;
 }
 
-
+.socials{
+    text-align: center;
+}
 .socials-row {
     display: flex;
     align-content: center;
     justify-content: space-between;
     width: 50px;
+    margin-left: 88px;
 }
 
+.socials-div {
+    width: 30px;
+    height: 30px;
+    align-content: center;
+}
 .socials-icon {
     width: 30px;
     height: 30px;
+    color:hsl(215, 69%, 27%);
+}
+
+.section-title-block {
+    display: flex;
+    justify-content: space-between;
+}
+.add-blog {
+    display: flex;
+    background-color: #1C539F;
+    height: 60px;
+    width: 140px;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    align-self: center;
+    margin-top: -5px;
+}
+
+.blog-text {
+    margin-top: 20px;
+}
+
+.blog-btn {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
