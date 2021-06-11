@@ -40,7 +40,7 @@ The portfolio page displays all of the Fellow's projects, with each of them incl
 <br>
 ### Blog
 ---
-![Blog Image](https://user-images.githubusercontent.com/35150672/121641848-92897180-ca44-11eb-867d-e27aea0dcb10.png)
+![image](https://user-images.githubusercontent.com/54692916/121721441-e4181780-caa9-11eb-9cdb-10675f8f2085.png)
 The blog page is where the Fellow would be able to add new posts and display them. They each include a title, description, and image. By clicking on the view post button, the blog post view can be expanded to display more information.
 <br>
 
@@ -58,4 +58,5 @@ The contact page allows other people to send the Fellow a message via email. Soc
 
 ### Success Page
 ---
+![image](https://user-images.githubusercontent.com/54692916/121721673-20e40e80-caaa-11eb-92a3-0b26fe5e5778.png)
 The success page shows upon creating a new blog post or sending a message through the contact page.
