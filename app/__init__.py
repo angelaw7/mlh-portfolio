@@ -87,8 +87,12 @@ def portfolio():
 @app.route('/blog')
 def blogPage():
     blog_posts = get_posts()
+    path = 'app/static/img/blog/'
     for post in blog_posts:
-        post.img = send_file(post.img, post.img_mimetype)
+        post.content = post.content[:255] + '...'
+        with open(path + post.img_name, "wb") as binary_file:
+            # Write bytes to file
+            binary_file.write(post.img)
     return render_template('blog.html', url=os.getenv("URL"), headerInfo=headerInfo, blog_posts=blog_posts)
 
 @app.route('/contact')

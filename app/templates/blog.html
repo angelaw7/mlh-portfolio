@@ -14,7 +14,7 @@
   <div class="project-card-holder">
       {% for post in blog_posts %}
       <div class="project-card card">
-          <img class="project-card-img" src="{{'./static/img/placeholder.jpg' or post.img}}" alt="{{post.img_name}}">
+          <img class="project-card-img" src="{{'./static/img/blog/' + post.img_name}}" alt="{{post.img_name}}">
           <div>
               <p class="project-card-title">{{post.title}}</p>
               <p class="project-card-text">{{post.content}}</p>
