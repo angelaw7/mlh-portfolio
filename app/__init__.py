@@ -5,9 +5,6 @@ from dotenv import load_dotenv
 from db import db_init, db
 from models import Blog
 import smtplib
-# from contactForm import ContactForm
-
-
 
 load_dotenv()
 app = Flask(__name__)
@@ -147,9 +144,9 @@ def upload():
 def get_post(id):
     post = Blog.query.filter_by(id=id).first()
     if not post:
-        return 'Img Not Found!', 404
+        return 'Post Not Found!', 404
 
-    return Response(post.img, mimetype=post.img_mimetype)
+    return render_template('detail_blog.html', url=os.getenv("URL"), title=post.title, post=post)
 
 
 def get_posts():
