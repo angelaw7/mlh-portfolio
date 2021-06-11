@@ -304,3 +304,16 @@ form {
     color: rgba(0, 0, 0, 0.5);
     letter-spacing: 0.2rem;
 }
+
+
+.socials-row {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 50px;
+}
+
+.socials-icon {
+    width: 30px;
+    height: 30px;
+}
