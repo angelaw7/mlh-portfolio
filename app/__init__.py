@@ -5,9 +5,6 @@ from dotenv import load_dotenv
 from db import db_init, db
 from models import Blog
 import smtplib
-# from contactForm import ContactForm
-
-
 
 load_dotenv()
 app = Flask(__name__)
