@@ -1,40 +1,41 @@
-# Flask-Blog
+# Flask Portfolio
+## By: Anh, Lalo, Angela, Pod 3.3.3
 
-Minimal Flask template to get started on your blog application for MLH Fellowship Production Engineering track.
- 
+A minimalistic blogging and portfolio website for the Production Engineering Track of the MLH Fellowship, developed with the Flask micro web framework.
 
-## Installation
-
-Make sure you have python3 and pip installed
+## Project Overview
 
 
-Create and activate virtual environment using virtualenv
-```bash
-$ python -m venv python3-virtualenv
-$ source python3-virtualenv/bin/activate
-$ python3-virtualenv\Scripts\activate (For Windows)
-```
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
+### Technologies Used
+- Flask
+- SQLite
+- Html/CSS
+- Python
 
 
-Create a .env file using the example.env template
+## Website Overview
+### Header
+![image](https://user-images.githubusercontent.com/74735037/121630920-12ffa080-ca4c-11eb-99cd-828b1b2c7485.png)
+The header is present on all pages. It includes the Fellow's name, a short tagline, and a cover image.
+
+### About Me
 
 
-Start flask development server
-```bash
-$ export FLASK_ENV=development
-$ set FLASK_ENV=development (For Windows)
-$ flask run
-```
+### Portfolio
+![image](https://user-images.githubusercontent.com/74735037/121631029-522df180-ca4c-11eb-92b8-e15ed12cd9b1.png)
+The portfolio page displays all of the Fellow's projects, with each of them including a project name and short description. They link to their respective Github repositories.
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+### Blog
+![image](https://user-images.githubusercontent.com/74735037/121631111-77bafb00-ca4c-11eb-9157-8d9e25ca9f1d.png)
+The blog page is where the Fellow would be able to add new posts and display them. They each include a title, description, and image. By clicking on the view post button, the blog post view can be expanded to display more information.
 
-Please make sure to update tests as appropriate.
+### Add Blog Post
+![image](https://user-images.githubusercontent.com/74735037/121631238-b0f36b00-ca4c-11eb-9615-7a9390320c93.png)
+By clicking on the Add post button on the Blog page, the Fellow can add a new post. The post information would be added onto the database and displayed on the blog page.
+
+### Contact
+![image](https://user-images.githubusercontent.com/74735037/121631322-de401900-ca4c-11eb-8bf9-b324ee22966c.png)
+The contact page allows other people to send the Fellow a message via email. Social media accounts are displayed at the bottom and link to their respective pages.
+
+### Success Page
+The success page shows upon creating a new blog post or sending a message through the contact page.
