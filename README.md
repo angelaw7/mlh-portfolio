@@ -18,9 +18,6 @@ A minimalistic blogging and portfolio website for the Production Engineering Tra
 
 
 ## Website Overview
-
-<br>
-
 ### Header
 ---
 ![Header Image](https://user-images.githubusercontent.com/74735037/121630920-12ffa080-ca4c-11eb-99cd-828b1b2c7485.png)
