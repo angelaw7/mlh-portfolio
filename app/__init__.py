@@ -23,6 +23,34 @@ headerInfo = {
     'intro': 'Short intro here'
 }
 
+aboutInfo = {
+    'shortParagraph': 'Hi! My name is Fellow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu sapien and lorem fermentum hendrerit quis mattis arcu. Nulla eget efficitur ex. Proin hendrerit ligula quis vehicula interdum.',
+    'education': [
+        {
+            'schoolName': 'MLH 1',
+            'year': '2017 - 2020'
+        },
+        {
+            'schoolName': 'MLH 2',
+            'year': '2020 - Present'
+        }
+    ],
+    'interest': ['Interest 1', 'Interest 2', 'Interest 3'],
+    'experience': [
+        {
+            'jobTitle': 'Title 1',
+            'year': '2020',
+            'jobDesc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu sapien and lorem fermentum hendrerit quis mattis arcu. Nulla eget efficitur ex. Proin hendrerit ligula quis vehicula interdum.'
+        },
+        {
+            'jobTitle': 'Title 2',
+            'year': '2021',
+            'jobDesc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu sapien and lorem fermentum hendrerit quis mattis arcu. Nulla eget efficitur ex. Proin hendrerit ligula quis vehicula interdum.'
+        }
+    ],
+    'skill': ['Skill 1', 'Skill 2', 'Skill 3']
+}
+
 projects = [
     {
         'title': 'Flask Web App',
@@ -44,7 +72,11 @@ projects = [
 # Pages
 @app.route('/')
 def index():
-    return render_template('about.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo)
+    return render_template('about.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, aboutInfo=aboutInfo)
+
+@app.route('/about')
+def aboutMe():
+    return render_template('about.html', headerInfo=headerInfo, aboutInfo=aboutInfo)
 
 
 @app.route('/portfolio')
