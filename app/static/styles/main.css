@@ -140,6 +140,7 @@ body {
     font-size: 2rem;
     display: flex;
     align-items: center;
+    padding: 1rem;
 }
 .section-title > i {
     margin-right: 1rem;
@@ -175,6 +176,17 @@ body {
         0 2.7px 17.9px rgba(0, 0, 0, 0.042),
         0 5px 33.4px rgba(0, 0, 0, 0.05),
         0 12px 80px rgba(0, 0, 0, 0.07);
+}
+
+/* ABOUT ME */
+
+.shortPara {
+    text-align: center;
+    display: inline-block;
+}
+
+.info {
+    padding: 4rem;
 }
 
 /* PROJECTS */
