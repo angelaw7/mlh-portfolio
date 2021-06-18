@@ -15,37 +15,33 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 db_init(app)
 
 headerInfo = {
-    'img':'./static/img/coverimg.jpg',
-    'name': 'Fellow Name',
-    'intro': 'Short intro here'
+    'img':'https://scontent-yyz1-1.xx.fbcdn.net/v/t1.6435-9/118762513_782337522531622_2197491087716901873_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=e3f864&_nc_ohc=6Idw_mritXwAX_yOAkE&tn=fbNlqOgcmKXbUzA3&_nc_ht=scontent-yyz1-1.xx&oh=956d3f2ed07e844c6d69ba7a392a055d&oe=60CE2B32',
+    'name': 'Angela Wang',
+    'intro': 'Software and Biomedical Engineering Student, MLH Fellow'
 }
 
 aboutInfo = {
-    'shortParagraph': 'Hi! My name is Fellow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu sapien and lorem fermentum hendrerit quis mattis arcu. Nulla eget efficitur ex. Proin hendrerit ligula quis vehicula interdum.',
+    'shortParagraph': "Hey! My name is Angela and I'm a Software and Biomedical Engineering student at McMaster University. I'm passionate about medicine and technology and I hope to integrate both fields to one day work on developing innovative medical devices. I love to learn new things and I will never turn down an opportunity to continue developing my skills and exploring my interests. I'm currently participating in the Production Engineering Track of the MLH Fellowship this summer, where I'm learning  about Production/Site Reliability Engineering and DevOps. I'm also exploring Full-stack Development and I've recently taken an interest in Computer Vision and Machine Learning. \nIf anything here piques your interests, feel free to reach out! I'd love to connect and have a chat.",
     'education': [
         {
-            'schoolName': 'MLH 1',
-            'year': '2017 - 2020'
-        },
-        {
-            'schoolName': 'MLH 2',
-            'year': '2020 - Present'
+            'schoolName': 'McMaster University',
+            'year': '2020 - 2025'
         }
     ],
     'interest': ['Interest 1', 'Interest 2', 'Interest 3'],
     'experience': [
         {
-            'jobTitle': 'Title 1',
-            'year': '2020',
-            'jobDesc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu sapien and lorem fermentum hendrerit quis mattis arcu. Nulla eget efficitur ex. Proin hendrerit ligula quis vehicula interdum.'
+            'jobTitle': 'MLH Production Engineering Fellow',
+            'year': 'June 2021 - August 2021',
+            'jobDesc': 'Production Engineering, also known as Site Reliability Engineering & DevOps, is a hybrid between software & systems engineering that works across product & infrastructure to make sure services are reliable & scalable.'
         },
         {
-            'jobTitle': 'Title 2',
-            'year': '2021',
-            'jobDesc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu sapien and lorem fermentum hendrerit quis mattis arcu. Nulla eget efficitur ex. Proin hendrerit ligula quis vehicula interdum.'
+            'jobTitle': 'Makria Web Developer',
+            'year': 'June 2021 - August 2021',
+            'jobDesc': 'Updating and revising the Makria website using Wordpress. Updating plugings, Javascript interactions, eCommerce integrations.'
         }
     ],
-    'skill': ['Skill 1', 'Skill 2', 'Skill 3']
+    'skill': ['Python', 'Javascript', 'HTML/CSS']
 }
 
 projects = [
@@ -152,3 +148,8 @@ def get_post(id):
 def get_posts():
     posts = Blog.query.order_by(Blog.date_created).all()
     return posts
+
+@app.route('/healthy')
+def healthy():
+    db.engine.execute('SELECT 1')
+    return ''
