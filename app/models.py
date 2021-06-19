@@ -1,5 +1,5 @@
 from datetime import datetime
-from app.db import db
+from app import db
 
 class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)

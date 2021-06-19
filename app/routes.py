@@ -1,6 +1,5 @@
 from flask import render_template, request
-from app import app
-from app.db import db_init, db
+from app import app, db
 from app.models import Blog
 import os
 import smtplib
