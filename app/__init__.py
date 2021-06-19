@@ -1,8 +1,8 @@
 import os
 from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
-from db import db_init, db
-from models import Blog
+from app.db import db_init, db
+from app.models import Blog
 import smtplib
 
 app = Flask(__name__)
