@@ -5,7 +5,7 @@ import os
 import smtplib
 
 headerInfo = {
-    'img':'https://scontent-yyz1-1.xx.fbcdn.net/v/t1.6435-9/118762513_782337522531622_2197491087716901873_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=e3f864&_nc_ohc=6Idw_mritXwAX_yOAkE&tn=fbNlqOgcmKXbUzA3&_nc_ht=scontent-yyz1-1.xx&oh=956d3f2ed07e844c6d69ba7a392a055d&oe=60CE2B32',
+    'img':'./static/img/fbcoverimg.jpg',
     'name': 'Angela Wang',
     'intro': 'Software and Biomedical Engineering Student, MLH Fellow'
 }
