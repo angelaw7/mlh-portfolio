@@ -1,12 +1,10 @@
 import os
-from flask import Flask, request, Response, render_template, send_file, send_from_directory, jsonify
+from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
-from dotenv import load_dotenv
 from db import db_init, db
 from models import Blog
 import smtplib
 
-load_dotenv()
 app = Flask(__name__)
  
 app.secret_key = 'development key'
