@@ -112,7 +112,7 @@ body {
     padding: 1.5rem 0;
 }
 .navbarItems > a:hover {
-    background-color: hsl(215, 69%, 27%);
+    /* background-color: hsl(215, 69%, 27%); */
 }
 
 

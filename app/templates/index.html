@@ -15,6 +15,7 @@
         rel="stylesheet">
 
     <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <script src="https://kit.fontawesome.com/792cf20241.js" crossorigin="anonymous"></script>
     <title>{{ headerInfo.name }}</title>
@@ -48,8 +49,10 @@
         </ul>
     </div>
 
-    {% block content %}
-    {% endblock content %}
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    <div>
     <div style="margin: 2rem 0;"></div>
 </body>
 </html>

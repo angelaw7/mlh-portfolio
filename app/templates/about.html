@@ -16,8 +16,9 @@
             <h2>Education</h2>
             {% for edu in  aboutInfo.education %}
             <div>
-                <h3>{{edu.schoolName}}</h3>
-                <p>{{edu.year}}</p>
+                <h5>{{edu.schoolName}}</h5>
+                <small>{{edu.year}}</small>
+                <p><strong>Clubs:&nbsp;</strong>{{edu.description}}</p>
             </div>
             
             {% endfor %}
@@ -29,7 +30,7 @@
     <div class="project-card card">
         <section>
             <h2>Interest</h2>
-            {% for int in  aboutInfo.interest %}
+            {% for int in aboutInfo.interest %}
             <div>
                 <p><strong>{{int}}</strong></p>
             </div>
@@ -43,12 +44,14 @@
         <section>
             <h2>Experience</h2>
     
-            {% for exp in  aboutInfo.experience %}
+            {% for exp in aboutInfo.experience %}
+            <hr>
             <div>
-                <h3>{{exp.jobTitle}}</h3>
-                <p>{{exp.year}}</p>
-                <p><strong>{{exp.jobDesc}}</strong></p>
+                <h5>{{exp.jobTitle}}</h5>
+                <small>{{exp.year}}</small>
+                <p>{{exp.jobDesc}}</p>
             </div>
+        
             
             {% endfor %}
         </section>
@@ -59,11 +62,16 @@
     <div class="project-card card">
         <section>
             <h2>Skills</h2>
-            {% for skill in  aboutInfo.skill %}
-            <div>
-                <p><strong>{{skill}}</strong></p>
-            </div>
-            {% endfor %}
+            <div class="row align-items-center">
+
+            
+                {% for skill in aboutInfo.skill %}
+                <div class="col">
+                    <i class="{{skill.icon}} fa-5x"></i>
+                    <p><strong>{{skill.name}}</strong></p>
+                </div>
+                {% endfor %}
+        </div>
         </section>
     </div>
     

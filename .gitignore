@@ -2,4 +2,4 @@ venv
 __pycache__
 *.pyc
 .env
-python3-virtualenv
+node_modules

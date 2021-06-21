@@ -15,7 +15,8 @@ aboutInfo = {
     'education': [
         {
             'schoolName': 'McMaster University',
-            'year': '2020 - 2025'
+            'year': '2020 - 2025',
+            'description':'McMaster Developers Students Club, McMaster Start Coding, Medical Makers'
         }
     ],
     'interest': ['Interest 1', 'Interest 2', 'Interest 3'],
@@ -28,10 +29,14 @@ aboutInfo = {
         {
             'jobTitle': 'Makria Web Developer',
             'year': 'June 2021 - August 2021',
-            'jobDesc': 'Updating and revising the Makria website using Wordpress. Updating plugings, Javascript interactions, eCommerce integrations.'
+            'jobDesc': 'Updating and revising the Makria website using Wordpress. Managing plugings, Javascript interactions, eCommerce integrations.'
         }
     ],
-    'skill': ['Python', 'Javascript', 'HTML/CSS']
+    'skill': [
+        {'name':'Python', 'icon':'fab fa-python'},
+        {'name':'Javascript','icon':'fab fa-js-square'},
+        {'name':'HTML/CSS','icon':'fab fa-html5'}
+        ]
 }
 
 projects = [
