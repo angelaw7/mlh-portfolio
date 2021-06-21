@@ -95,7 +95,7 @@ def sendMsg():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login('testmlh.pod.333@gmail.com', 'iampod333')
-    server.sendmail('testmlh.pod.333@gmail.com', 'testmlh.pod.333@gmail.com', message2Send)
+    server.sendmail('testmlh.pod.333@gmail.com', 'wangela472@gmail.com', message2Send)
     return render_template('success.html', url=os.getenv("URL"), headerInfo=headerInfo)
 
 
