@@ -4,7 +4,7 @@ from app.models import Blog
 import os
 import smtplib
 from app.websiteData import *
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from app.db import get_db
 
 # Routes
@@ -123,3 +123,27 @@ def register():
             return error, 418
 
     return "Register Page not yet implemented", 501
+
+
+@app.route('/login', methods=('GET', 'POST'))
+def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        db = get_db()
+        error = None
+        user = db.execute(
+            'SELECT * FROM user WHERE username = ?', (username,)
+        ).fetchone()
+
+        if user is None:
+            error = 'Incorrect username.'
+        elif not check_password_hash(user['password'], password):
+            error = 'Incorrect password.'
+
+        if error is None:
+            return "Login Successful", 200 
+        else:
+            return error, 418
+    
+    return "Login Page not yet implemented", 501
