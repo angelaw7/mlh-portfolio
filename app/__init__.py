@@ -1,8 +1,12 @@
-from flask import Flask
+from flask import Flask, request, render_template
+import os
 from flask_sqlalchemy import SQLAlchemy
+from . import db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+db.init_app(app)
 app.secret_key = 'development key'
 db = SQLAlchemy(app)
 
