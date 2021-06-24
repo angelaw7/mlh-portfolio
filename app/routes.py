@@ -110,7 +110,7 @@ def register():
         elif db.execute(
             'SELECT id FROM user WHERE username = ?', (username,)
         ).fetchone() is not None:
-            error = f"User {username} is already registered."
+            error = "User {username} is already registered."
 
         if error is None:
             db.execute(
@@ -118,7 +118,7 @@ def register():
                 (username, generate_password_hash(password))
             )
             db.commit()
-            return f"User {username} created successfully"
+            return "User {username} created successfully"
         else:
             return error, 418
 
