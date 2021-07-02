@@ -5,7 +5,7 @@ import os
 import smtplib
 from app.websiteData import *
 from werkzeug.security import generate_password_hash, check_password_hash
-from app.db import get_db
+# from app.db import get_db
 
 # Routes
 @app.route('/')
