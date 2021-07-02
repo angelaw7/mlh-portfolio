@@ -7,4 +7,5 @@ RUN pip3 install -r requirements.txt
 
 COPY . /myportfolio
 
-CMD ["gunicorn", "run:app", "-w 4", "-b 0.0.0.0:80"]
+RUN chmod u+x ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
