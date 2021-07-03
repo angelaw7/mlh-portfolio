@@ -7,6 +7,19 @@ from app.websiteData import *
 from werkzeug.security import generate_password_hash, check_password_hash
 # from app.db import get_db
 
+class UserModel(db.Model):
+    __tablename__ = 'users'
+
+    username = db.Column(db.String(), primary_key=True)
+    password = db.Column(db.String())
+
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+    def __repr__(self):
+        return "<User {self.username}>"
+
 # Routes
 @app.route('/')
 def index():
@@ -51,8 +64,7 @@ def contact():
 
 @app.route('/health')
 def healthy():
-    db.engine.execute('SELECT 1')
-    return ''
+    return 'Healthy!'
 
 # Send email through contact page
 @app.route('/sendMsg', methods=['POST'])
@@ -100,7 +112,6 @@ def register():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        db = get_db()
         error = None
 
         if not username:
@@ -126,7 +137,6 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        db = get_db()
         error = None
         user = UserModel.query.filter_by(username=username).first()
 
