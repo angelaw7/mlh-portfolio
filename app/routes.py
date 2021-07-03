@@ -7,6 +7,7 @@ from app.websiteData import *
 from werkzeug.security import generate_password_hash, check_password_hash
 # from app.db import get_db
 
+
 class UserModel(db.Model):
     __tablename__ = 'users'
 
@@ -20,18 +21,22 @@ class UserModel(db.Model):
     def __repr__(self):
         return "<User {self.username}>"
 
+
 # Routes
 @app.route('/')
 def index():
     return render_template('about.html', title="MLH Fellow", url=os.getenv("URL"), headerInfo=headerInfo, aboutInfo=aboutInfo)
 
+
 @app.route('/about')
 def aboutMe():
     return render_template('about.html', headerInfo=headerInfo, aboutInfo=aboutInfo)
 
+
 @app.route('/portfolio')
 def portfolio():
     return render_template('portfolio.html', headerInfo=headerInfo, projects=projects)
+
 
 @app.route('/blog')
 def blogPage():
@@ -44,10 +49,12 @@ def blogPage():
             binary_file.write(post.img)
     return render_template('blog.html', url=os.getenv("URL"), headerInfo=headerInfo, blog_posts=blog_posts)
 
+
 # New blog post page
 @app.route('/new-blog')
 def new_blog():
     return render_template('new_blog.html', title="New Blog", url=os.getenv("URL"), projects=projects)
+
 
 # View full details about a blog
 @app.route('/blog/<int:id>')
@@ -58,13 +65,16 @@ def get_post(id):
 
     return render_template('detail_blog.html', url=os.getenv("URL"), title=post.title, post=post)
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html', url=os.getenv("URL"), headerInfo=headerInfo)
 
+
 @app.route('/health')
 def healthy():
     return 'Healthy!'
+
 
 # Send email through contact page
 @app.route('/sendMsg', methods=['POST'])
@@ -81,6 +91,7 @@ def sendMsg():
     server.login('lightshield539@gmail.com', 'bOTspam21')
     server.sendmail('testmlh.pod.333@gmail.com', 'wangela472@gmail.com', message2Send)
     return render_template('success.html', url=os.getenv("URL"), headerInfo=headerInfo)
+
 
 # Create new blog post
 @app.route('/upload', methods=['POST'])
@@ -103,9 +114,11 @@ def upload():
 
     return render_template('success.html', url=os.getenv("URL"), headerInfo=headerInfo)
 
+
 def get_posts():
     posts = Blog.query.order_by(Blog.date_created).all()
     return posts
+
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
