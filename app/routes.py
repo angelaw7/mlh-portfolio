@@ -66,9 +66,9 @@ def get_post(id):
     return render_template('detail_blog.html', url=os.getenv("URL"), title=post.title, post=post)
 
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html', url=os.getenv("URL"), headerInfo=headerInfo)
+# @app.route('/contact')
+# def contact():
+#     return render_template('contact.html', url=os.getenv("URL"), headerInfo=headerInfo)
 
 
 @app.route('/health')
