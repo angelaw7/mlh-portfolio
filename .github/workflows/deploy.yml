@@ -36,10 +36,14 @@ jobs:
         run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
 
       - name: Send Discord notification upon successful deployment
-        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=Deployment successful !!"
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful !!"
 
       - name: Checkout Git repository
         uses: actions/checkout@v2
 
       - name: Test endpoints
         run: bash prod-test.sh
+
+      - name: Send Discord notification upon unsuccessful deployment
+        if: ${{ failure() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
