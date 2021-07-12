@@ -38,14 +38,7 @@ projects = [
         'title': 'MLH Fellowship - Personal Website',
         'description': 'A personal website built using the Flask framework for the Production Engineering MLH Fellowship.',
         'date': 'June 2021',
-        'img': './static/img/projects/web-dev.jpg',
+        'img': './static/img/projects/web_cover.png',
         'url': 'https://github.com/angelaw7/mlh-portfolio',
-    },
-    {
-        'title': 'Machine Learning Project For Data Prediction',
-        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu sapien and lorem fermentum hendrerit quis mattis arcu. Nulla eget efficitur ex. Proin hendrerit ligula quis vehicula interdum.',
-        'date': '06/09/2021',
-        'img': './static/img/projects/machine-learning.jpg',
-        'url': 'www.github.com',
     },
 ]
