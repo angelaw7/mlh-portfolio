@@ -35,6 +35,11 @@ jobs:
       - name: Print container status
         run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
 
-      - name: Send Discord notification
+      - name: Send Discord notification upon successful deployment
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=Deployment successful !!"
-        
+
+      - name: Checkout Git repository
+        uses: actions/checkout@v2
+
+      - name: Test endpoints
+        run: bash prod-test.sh
