@@ -2,14 +2,16 @@ name: Deploy
 
 on:
   push:
-    - master
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
   deploy:
     name: Deploy to AWS EC2 Virtual Machine
     runs-on: ubuntu-latest
-    steps:
+
+    steps: 
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
