@@ -21,7 +21,7 @@ jobs:
           Host my-vm
             HostName $SSH_IP
             User $SSH_USER
-            IdentifyFile ~/.ssh/deploy-key.pem
+            IdentityFile ~/.ssh/deploy-key.pem
             StrictHostKeyChecking no
           END
         env:
@@ -31,3 +31,4 @@ jobs:
 
       - name: Print project root directory
         run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && pwd'
+        
