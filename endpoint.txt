@@ -1,0 +1,7 @@
+about
+blog
+contact
+health
+login
+portfolio
+register
