@@ -1,0 +1,37 @@
+{% extends 'index.html' %} {% block content %}
+<br />
+<div class="contact-form">
+  <h1 class="section-title">Login</h1>
+  <div class="form-container">
+    <form action="/login" enctype="multipart/form-data" method="POST">
+      <div class="input-container">
+        <label for="username">Username</label>
+        <input
+          type="username"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
+      </div>
+      <div class="input-container">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div class="button-container">
+        <input
+          class="button submit contact-button"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
