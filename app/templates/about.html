@@ -1,79 +1,73 @@
-{% extends 'index.html' %}
-
-{% block content %}
+{% extends 'index.html' %} {% block content %}
 <h2 class="section-title">
-    <i class="fa fa-user"></i>
-    About Me
+	<i class="fa fa-user"></i>
+	About Me
 </h2>
 
 <div class="shortPara">
-    <p>{{aboutInfo.shortParagraph}}</p>
+	<p>{{aboutInfo.shortParagraph}}</p>
 </div>
 
 <div class="info">
-    <div class="project-card card">
-        <section>
-            <h2>Education</h2>
-            {% for edu in  aboutInfo.education %}
-            <div>
-                <h5>{{edu.schoolName}}</h5>
-                <small>{{edu.year}}</small>
-                <p><strong>Clubs:&nbsp;</strong>{{edu.description}}</p>
-            </div>
-            
-            {% endfor %}
-        </section>
-    </div>
+	<div class="project-card card">
+		<section>
+			<h2>Education</h2>
+			{% for edu in aboutInfo.education %}
+			<div>
+				<h5>{{edu.schoolName}}</h5>
+				<small>{{edu.year}}</small>
+				<p><strong>Clubs:&nbsp;</strong>{{edu.description}}</p>
+			</div>
 
-    <br>
+			{% endfor %}
+		</section>
+	</div>
 
-    <div class="project-card card">
-        <section>
-            <h2>Interest</h2>
-            {% for int in aboutInfo.interest %}
-            <div>
-                <p><strong>{{int}}</strong></p>
-            </div>
-            {% endfor %}
-        </section>
-    </div>
+	<br />
 
-    <br>
+	<div class="project-card card">
+		<section>
+			<h2>Interests</h2>
+			{% for int in aboutInfo.interest %}
+			<div>
+				<p><strong>{{int}}</strong></p>
+			</div>
+			{% endfor %}
+		</section>
+	</div>
 
-    <div class="project-card card">
-        <section>
-            <h2>Experience</h2>
-    
-            {% for exp in aboutInfo.experience %}
-            <hr>
-            <div>
-                <h5>{{exp.jobTitle}}</h5>
-                <small>{{exp.year}}</small>
-                <p>{{exp.jobDesc}}</p>
-            </div>
-        
-            
-            {% endfor %}
-        </section>
-    </div>
+	<br />
 
-    <br>
+	<div class="project-card card">
+		<section>
+			<h2>Experience</h2>
 
-    <div class="project-card card">
-        <section>
-            <h2>Skills</h2>
-            <div class="row align-items-center">
+			{% for exp in aboutInfo.experience %}
+			<hr />
+			<div>
+				<h5>{{exp.jobTitle}}</h5>
+				<small>{{exp.year}}</small>
+				<p>{{exp.jobDesc}}</p>
+			</div>
 
-            
-                {% for skill in aboutInfo.skill %}
-                <div class="col">
-                    <i class="{{skill.icon}} fa-5x"></i>
-                    <p><strong>{{skill.name}}</strong></p>
-                </div>
-                {% endfor %}
-        </div>
-        </section>
-    </div>
-    
+			{% endfor %}
+		</section>
+	</div>
+
+	<br />
+
+	<div class="project-card card">
+		<section>
+			<h2>Skills</h2>
+			<div class="row align-items-center">
+				{% for skill in aboutInfo.skill %}
+				<div class="col">
+					<i class="{{skill.icon}} fa-5x"></i>
+					<p><strong>{{skill.name}}</strong></p>
+				</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
 </div>
 {% endblock %}

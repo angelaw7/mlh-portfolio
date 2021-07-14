@@ -128,6 +128,7 @@ def upload():
         img_name=filename,
         img_mimetype=mimetype,
     )
+
     db.session.add(post)
     db.session.commit()
 

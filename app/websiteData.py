@@ -1,5 +1,5 @@
 headerInfo = {
-    'img':'./static/img/fbcoverimg.jpg',
+    'img': './static/img/fbcoverimg.jpg',
     'name': 'Angela Wang',
     'intro': 'Software and Biomedical Engineering Student, MLH Fellow'
 }
@@ -10,7 +10,7 @@ aboutInfo = {
         {
             'schoolName': 'McMaster University',
             'year': '2020 - 2025',
-            'description':'McMaster Developers Students Club, McMaster Start Coding, Medical Makers'
+            'description': 'Medical Makers, McMaster Developers Students Club, McMaster Start Coding'
         }
     ],
     'interest': ['Interest 1', 'Interest 2', 'Interest 3'],
@@ -27,9 +27,9 @@ aboutInfo = {
         }
     ],
     'skill': [
-        {'name':'Python', 'icon':'fab fa-python'},
-        {'name':'Javascript','icon':'fab fa-js-square'},
-        {'name':'HTML/CSS','icon':'fab fa-html5'}
+        {'name': 'Python', 'icon': 'fab fa-python'},
+        {'name': 'Javascript', 'icon': 'fab fa-js-square'},
+        {'name': 'HTML/CSS', 'icon': 'fab fa-html5'}
         ]
 }
 
