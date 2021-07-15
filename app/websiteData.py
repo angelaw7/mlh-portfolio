@@ -36,9 +36,16 @@ aboutInfo = {
 projects = [
     {
         'title': 'MLH Fellowship - Personal Website',
-        'description': 'A personal website built using the Flask framework for the Production Engineering MLH Fellowship.',
+        'description': 'A personal website built using the Flask framework for the Production Engineering MLH Fellowship',
         'date': 'June 2021',
         'img': './static/img/projects/web_cover.png',
         'url': 'https://github.com/angelaw7/mlh-portfolio',
+    },
+    {
+        'title': 'Discord Bot',
+        'description': 'Discord Bot with Twitch and League API integrations',
+        'date': 'December 2020',
+        'img': './static/img/projects/discordimg.jpg',
+        'url': 'https://github.com/angelaw7/discord-bot',
     },
 ]
