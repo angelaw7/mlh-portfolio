@@ -13,7 +13,11 @@ aboutInfo = {
             'description': 'Medical Makers, McMaster Developers Students Club, McMaster Start Coding'
         }
     ],
-    'interest': ['Interest 1', 'Interest 2', 'Interest 3'],
+    'interest': [
+        'Machine Learning & Artificial Intelligence',
+        'Biomedical Devices',
+        '3D Modelling using Autodesk Inventor'
+        ],
     'experience': [
         {
             'jobTitle': 'MLH Production Engineering Fellow',
@@ -37,14 +41,14 @@ projects = [
     {
         'title': 'MLH Fellowship - Personal Website',
         'description': 'A personal website built using the Flask framework for the Production Engineering MLH Fellowship',
-        'date': 'June 2021',
+        'date': 'June 2021 - present',
         'img': './static/img/projects/web_cover.png',
         'url': 'https://github.com/angelaw7/mlh-portfolio',
     },
     {
         'title': 'Discord Bot',
         'description': 'Discord Bot with Twitch and League API integrations',
-        'date': 'December 2020',
+        'date': 'December 2020 - present',
         'img': './static/img/projects/discordimg.jpg',
         'url': 'https://github.com/angelaw7/discord-bot',
     },
