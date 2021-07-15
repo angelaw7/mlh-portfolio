@@ -1,33 +1,36 @@
-{% extends 'index.html' %}
+{% extends 'index.html' %} {% block content %}
+<!-- Projects -->
+<section class="projects">
+	<h2 class="section-title">
+		<i class="fas fa-project-diagram"></i>
+		Projects
+	</h2>
 
-{% block content %}
- <!-- Projects -->
- <section class="projects">
-
-  <h2 class="section-title">
-      <i class="fas fa-project-diagram"></i>
-      Projects
-  </h2>
-
-  <div class="project-card-holder">
-      {% for project in projects %}
-      <div class="project-card card">
-          <img class="project-card-img" src="{{project.img}}" alt="{{project.name}}">
-          <div>
-              <p class="project-card-title">{{project.title}}</p>
-              <p class="project-card-text">{{project.description}}</p>
-              <p class="project-card-date">{{project.date}}</p>
-              <div class="center">
-                  <button onclick=" window.open('http://{{project.url}}','_blank')" class="button project-card-button center">
-                      <i class="fab fa-github"></i>
-                      <label>View Project</label>
-                  </button>
-              </div>
-          </div>
-      </div>
-      {% endfor %}
-  </div>
-
-
+	<div class="project-card-holder">
+		{% for project in projects %}
+		<div class="project-card card">
+			<img
+				class="project-card-img"
+				src="{{project.img}}"
+				alt="{{project.name}}"
+			/>
+			<div>
+				<p class="project-card-title">{{project.title}}</p>
+				<p class="project-card-text">{{project.description}}</p>
+				<p class="project-card-date">{{project.date}}</p>
+				<div class="center">
+					<button
+						onclick="window.open('{{project.url}}', '_blank')"
+						target="_blank"
+						class="button project-card-button center"
+					>
+						<i class="fab fa-github"></i>
+						<label>View Project</label>
+					</button>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 </section>
 {% endblock content %}
