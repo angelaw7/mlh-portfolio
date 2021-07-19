@@ -1,7 +1,7 @@
 headerInfo = {
     'img': './static/img/fbcoverimg.jpg',
     'name': 'Angela Wang',
-    'intro': 'Software and Biomedical Engineering Student, MLH Fellow'
+    'intro': 'Software & Biomedical Engineering Student | MLH PE Fellow'
 }
 
 aboutInfo = {

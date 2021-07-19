@@ -3,7 +3,7 @@ from app import app, db
 from app.models import Blog
 import os
 import smtplib
-from app.websiteData import *
+from app.website_data import *
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # from app.db import get_db
