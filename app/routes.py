@@ -3,7 +3,7 @@ from app import app, db
 from app.models import Blog
 import os
 import smtplib
-from app.website_data import *
+from app.website_data import about_info, header_info, projects
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # from app.db import get_db
@@ -30,19 +30,19 @@ def index():
         "about.html",
         title="MLH Fellow",
         url=os.getenv("URL"),
-        headerInfo=headerInfo,
-        aboutInfo=aboutInfo,
+        header_info=header_info,
+        about_info=about_info,
     )
 
 
 @app.route("/about")
 def aboutMe():
-    return render_template("about.html", headerInfo=headerInfo, aboutInfo=aboutInfo)
+    return render_template("about.html", header_info=header_info, about_info=about_info)
 
 
 @app.route("/portfolio")
 def portfolio():
-    return render_template("portfolio.html", headerInfo=headerInfo, projects=projects)
+    return render_template("portfolio.html", header_info=header_info, projects=projects)
 
 
 @app.route("/blog")
@@ -55,7 +55,7 @@ def blogPage():
             # Write bytes to file
             binary_file.write(post.img)
     return render_template(
-        "blog.html", url=os.getenv("URL"), headerInfo=headerInfo, blog_posts=blog_posts
+        "blog.html", url=os.getenv("URL"), header_info=header_info, blog_posts=blog_posts
     )
 
 
@@ -81,7 +81,7 @@ def get_post(id):
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html", url=os.getenv("URL"), headerInfo=headerInfo)
+    return render_template("contact.html", url=os.getenv("URL"), header_info=header_info)
 
 
 @app.route("/health")
@@ -103,7 +103,7 @@ def sendMsg():
     server.starttls()
     server.login("lightshield539@gmail.com", "bOTspam21")
     server.sendmail("testmlh.pod.333@gmail.com", "wangela472@gmail.com", message2Send)
-    return render_template("success.html", url=os.getenv("URL"), headerInfo=headerInfo)
+    return render_template("success.html", url=os.getenv("URL"), header_info=header_info)
 
 
 # Create new blog post
@@ -132,7 +132,7 @@ def upload():
     db.session.add(post)
     db.session.commit()
 
-    return render_template("success.html", url=os.getenv("URL"), headerInfo=headerInfo)
+    return render_template("success.html", url=os.getenv("URL"), header_info=header_info)
 
 
 def get_posts():
@@ -162,7 +162,7 @@ def register():
         else:
             return error, 418
 
-    return render_template("register.html", url=os.getenv("URL"), headerInfo=headerInfo)
+    return render_template("register.html", url=os.getenv("URL"), header_info=header_info)
 
 
 @app.route("/login", methods=("GET", "POST"))
@@ -183,4 +183,4 @@ def login():
         else:
             return error, 418
 
-    return render_template("login.html", url=os.getenv("URL"), headerInfo=headerInfo)
+    return render_template("login.html", url=os.getenv("URL"), header_info=header_info)

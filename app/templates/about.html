@@ -5,14 +5,14 @@
 </h2>
 
 <div class="shortPara">
-	<p>{{aboutInfo.shortParagraph}}</p>
+	<p>{{about_info.shortParagraph}}</p>
 </div>
 
 <div class="info">
 	<div class="project-card card">
 		<section>
 			<h2>Education</h2>
-			{% for edu in aboutInfo.education %}
+			{% for edu in about_info.education %}
 			<div>
 				<h5>{{edu.schoolName}}</h5>
 				<small>{{edu.year}}</small>
@@ -26,10 +26,10 @@
 	<div class="project-card card">
 		<section>
 			<h2>Interests</h2>
-			{% for int in aboutInfo.interest %}
+			{% for int in about_info.interest %}
 			<ul>
 				<li>{{int}}</li>
-            </ul>
+			</ul>
 			{% endfor %}
 		</section>
 	</div>
@@ -37,7 +37,7 @@
 	<div class="project-card card">
 		<section>
 			<h2>Experiences</h2>
-			{% for exp in aboutInfo.experience %}
+			{% for exp in about_info.experience %}
 			<hr />
 			<div>
 				<h5>{{exp.jobTitle}}</h5>
@@ -52,7 +52,7 @@
 		<section>
 			<h2>Skills</h2>
 			<div class="row align-items-center">
-				{% for skill in aboutInfo.skill %}
+				{% for skill in about_info.skill %}
 				<div class="col">
 					<i class="{{skill.icon}} fa-5x"></i>
 					<p><strong>{{skill.name}}</strong></p>
