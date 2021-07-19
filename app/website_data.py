@@ -34,7 +34,7 @@ aboutInfo = {
         {"name": "Python", "icon": "fab fa-python"},
         {"name": "Javascript", "icon": "fab fa-js-square"},
         {"name": "HTML/CSS", "icon": "fab fa-html5"},
-        ],
+    ],
 }
 
 projects = [
