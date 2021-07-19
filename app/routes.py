@@ -5,6 +5,7 @@ import os
 import smtplib
 from app.website_data import about_info, header_info, projects
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 
 # from app.db import get_db
 
