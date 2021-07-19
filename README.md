@@ -1,7 +1,6 @@
-# Flask Portfolio
-## By: Anh, Lalo, Angela, Pod 3.3.3
-
-A minimalistic blogging and portfolio website for the Production Engineering Track of the MLH Fellowship, developed with the Flask micro web framework.
+# Angela's Flask Portfolio
+## https://www.angela-mlh.duckdns.org/
+A minimalistic blogging and portfolio website for the Production Engineering Track of the MLH Fellowship, developed with the Flask micro-web framework. Originally created with my Orientation Hackathon teammates, Lalo and Anh.
 <br>
 
 ## Project Overview
@@ -19,17 +18,17 @@ This website was developed using the Flask micro web framework for the Orientati
 
 ## Website Overview
 ### Header
-![Header Image](https://user-images.githubusercontent.com/74735037/121630920-12ffa080-ca4c-11eb-99cd-828b1b2c7485.png)
+![Header image](https://user-images.githubusercontent.com/74735037/126104787-7ee750ca-4c72-41c1-9559-785e5884eef7.png)
 The header is present on all pages. It includes the Fellow's name, a short tagline, and a cover image.
 <br>
 
 ### About Me
-![About Me Image](https://user-images.githubusercontent.com/35150672/121641295-dc258c80-ca43-11eb-9843-5c9ac24a988d.png)
+![About Me image](https://user-images.githubusercontent.com/74735037/126104850-8fd125e2-9a4d-48c2-a6da-10d339120b3e.png)
 The About Me page displays a more detailed introduction of the Fellow, including a short paragraph, Education, Interest, Experience and Skills. The page was made as simple as possible to make room for later customizations.
 <br>
 
 ### Portfolio
-![Portfolio Image](https://user-images.githubusercontent.com/74735037/121631029-522df180-ca4c-11eb-92b8-e15ed12cd9b1.png)
+![Portfolio Image](https://user-images.githubusercontent.com/74735037/126104901-932056ab-eecd-4328-8931-94c8ba7d890a.png)
 The portfolio page displays all of the Fellow's projects, with each of them including a project name and short description. They link to their respective Github repositories.
 <br>
 
