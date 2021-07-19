@@ -55,7 +55,10 @@ def blogPage():
             # Write bytes to file
             binary_file.write(post.img)
     return render_template(
-        "blog.html", url=os.getenv("URL"), header_info=header_info, blog_posts=blog_posts
+        "blog.html",
+        url=os.getenv("URL"),
+        header_info=header_info,
+        blog_posts=blog_posts,
     )
 
 
@@ -81,7 +84,9 @@ def get_post(id):
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html", url=os.getenv("URL"), header_info=header_info)
+    return render_template(
+        "contact.html", url=os.getenv("URL"), header_info=header_info
+    )
 
 
 @app.route("/health")
@@ -103,7 +108,9 @@ def sendMsg():
     server.starttls()
     server.login("lightshield539@gmail.com", "bOTspam21")
     server.sendmail("testmlh.pod.333@gmail.com", "wangela472@gmail.com", message2Send)
-    return render_template("success.html", url=os.getenv("URL"), header_info=header_info)
+    return render_template(
+        "success.html", url=os.getenv("URL"), header_info=header_info
+    )
 
 
 # Create new blog post
@@ -132,7 +139,9 @@ def upload():
     db.session.add(post)
     db.session.commit()
 
-    return render_template("success.html", url=os.getenv("URL"), header_info=header_info)
+    return render_template(
+        "success.html", url=os.getenv("URL"), header_info=header_info
+    )
 
 
 def get_posts():
@@ -162,7 +171,9 @@ def register():
         else:
             return error, 418
 
-    return render_template("register.html", url=os.getenv("URL"), header_info=header_info)
+    return render_template(
+        "register.html", url=os.getenv("URL"), header_info=header_info
+    )
 
 
 @app.route("/login", methods=("GET", "POST"))
