@@ -47,7 +47,7 @@ def aboutMe():
 def portfolio():
     return render_template(
         "portfolio.html", header_info=header_info, projects=projects
-        )  # noqa: E501
+    )  # noqa: E501
 
 
 @app.route("/blog")
@@ -113,13 +113,13 @@ def sendMsg():
 
     message2Send = (
         "\nName: " + name + " \nEmail: " + email + "\nMessage: " + message
-      )  # noqa: E501
+    )  # noqa: E501
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
     server.login("testmlh.pod.333@gmail.com", "iampod333")
     server.sendmail(
         "testmlh.pod.333@gmail.com", "wangela472@gmail.com", message2Send
-        )  # noqa: E501
+    )  # noqa: E501
     return render_template(
         "success.html", url=os.getenv("URL"), header_info=header_info
     )
@@ -208,4 +208,4 @@ def login():
 
     return render_template(
         "login.html", url=os.getenv("URL"), header_info=header_info
-        )  # noqa: E501
+    )  # noqa: E501
