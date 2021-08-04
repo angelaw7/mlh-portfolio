@@ -21,4 +21,4 @@ app.secret_key = "development key"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from app import routes
+from app import routes  # noqa: E402, F401

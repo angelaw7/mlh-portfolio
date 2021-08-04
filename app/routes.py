@@ -40,7 +40,7 @@ def index():
 def aboutMe():
     return render_template(
         "about.html", header_info=header_info, about_info=about_info
-        )  # noqa: E501
+    )  # noqa: E501
 
 
 @app.route("/portfolio")
