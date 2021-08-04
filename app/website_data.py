@@ -22,8 +22,7 @@ about_info = {
         {
             "schoolName": "McMaster University",
             "year": "2020 - 2025",
-            "description":
-                "Medical Makers, \
+            "description": "Medical Makers, \
                 McMaster Developers Students Club, McMaster Start Coding",
         }
     ],
