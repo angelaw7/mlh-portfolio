@@ -38,14 +38,12 @@ def index():
 
 @app.route("/about")
 def aboutMe():
-    return render_template(
-        "about.html", header_info=header_info, about_info=about_info)
+    return render_template("about.html", header_info=header_info, about_info=about_info)  # noqa: E501
 
 
 @app.route("/portfolio")
 def portfolio():
-    return render_template(
-        "portfolio.html", header_info=header_info, projects=projects)
+    return render_template("portfolio.html", header_info=header_info, projects=projects)  # noqa: E501
 
 
 @app.route("/blog")
@@ -69,8 +67,7 @@ def blogPage():
 @app.route("/new-blog")
 def new_blog():
     return render_template(
-        "new_blog.html", title="New Blog", url=os.getenv("URL"),
-        projects=projects
+        "new_blog.html", title="New Blog", url=os.getenv("URL"), projects=projects  # noqa: E501
     )
 
 
@@ -107,13 +104,11 @@ def sendMsg():
     if not name or not email or not message:
         return "Not enough data!", 400
 
-    message2Send = "\nName: " + name + " \nEmail: "\
-        + email + "\nMessage: " + message
+    message2Send = "\nName: " + name + " \nEmail: " + email + "\nMessage: " + message  # noqa: E501
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
     server.login("testmlh.pod.333@gmail.com", "iampod333")
-    server.sendmail(
-        "testmlh.pod.333@gmail.com", "wangela472@gmail.com", message2Send)
+    server.sendmail("testmlh.pod.333@gmail.com", "wangela472@gmail.com", message2Send)  # noqa: E501
     return render_template(
         "success.html", url=os.getenv("URL"), header_info=header_info
     )
@@ -200,5 +195,4 @@ def login():
         else:
             return error, 418
 
-    return render_template(
-        "login.html", url=os.getenv("URL"), header_info=header_info)
+    return render_template("login.html", url=os.getenv("URL"), header_info=header_info)  # noqa: E501
