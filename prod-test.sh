@@ -1,5 +1,7 @@
 #! /usr/bin/bash
 
+sleep 5
+
 domain="https://www.angela-mlh.duckdns.org/"
 
 while read endpoint; do
