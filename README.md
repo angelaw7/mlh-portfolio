@@ -1,5 +1,5 @@
 # Angela's Flask Portfolio
-## https://www.angela-mlh.duckdns.org/
+## https://angela-mlh-portfolio.herokuapp.com/
 A minimalistic blogging and portfolio website for the Production Engineering Track of the MLH Fellowship, developed with the Flask micro-web framework. Originally created with my Orientation Hackathon teammates, Lalo and Anh.
 <br>
 
