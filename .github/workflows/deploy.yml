@@ -15,14 +15,14 @@ jobs:
       - name: Checkout Git repository
         uses: actions/checkout@v2
 
-      - name: Test endpoints
-        run: bash prod-test.sh
-
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: angela-mlh-portfolio
           heroku_email: wangela472@gmail.com
+
+      - name: Test endpoints
+        run: bash prod-test.sh
 
       - name: Send Discord notification upon unsuccessful deployment
         if: ${{ failure() }}

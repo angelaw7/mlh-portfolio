@@ -2,7 +2,7 @@
 
 sleep 5
 
-domain="https://www.angela-mlh.duckdns.org/"
+domain="https://angela-mlh-portfolio.herokuapp.com/"
 
 while read endpoint; do
   response=$(curl -s -o /dev/null -w "%{http_code}" $domain$endpoint)
